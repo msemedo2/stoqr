@@ -1,3 +1,132 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 4%;
+		--bg-surface: 0 0% 7%;
+		--bg-elevated: 0 0% 9%;
+
+		--primary: 0 0% 100%;
+		--secondary: 0 0% 53%;
+
+		--success: 120 57% 52%;
+		--danger: 0 100% 58%;
+		--warning: 35 91% 55%;
+		--info: 222 75% 48%;
+
+		--border: 0 0% 53%;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	body {
+		@apply bg-background text-primary font-sans;
+	}
+}
+
+@layer components {
+	.card {
+		@apply bg-card-bg rounded-lg border border-white/[0.08] shadow-card;
+	}
+
+	.btn {
+		@apply px-4 py-2 rounded-md font-medium transition-all duration-250;
+	}
+
+	.btn-primary {
+		@apply bg-info text-white hover:opacity-90;
+	}
+
+	.btn-secondary {
+		@apply bg-card-bg text-primary hover:bg-hover;
+	}
+}
+
+@layer utilities {
+	.flex-center {
+		@apply flex justify-center items-center;
+	}
+
+	.flex-between {
+		@apply flex justify-between items-center;
+	}
+
+	.flex-start {
+		@apply flex justify-start items-center;
+	}
+
+	.h1-bold {
+		@apply text-2xl font-bold leading-tight;
+	}
+
+	.h2-bold {
+		@apply text-xl font-bold leading-tight;
+	}
+
+	.h3-bold {
+		@apply text-lg font-bold leading-tight;
+	}
+
+	.body-regular {
+		@apply text-base leading-normal;
+	}
+
+	.body-medium {
+		@apply text-base font-medium leading-normal;
+	}
+
+	.body-semibold {
+		@apply text-base font-semibold leading-normal;
+	}
+
+	.small-regular {
+		@apply text-sm leading-snug;
+	}
+
+	.small-medium {
+		@apply text-sm font-medium leading-snug;
+	}
+
+	.numeric {
+		@apply font-mono tabular-nums;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 3px;
+		height: 3px;
+		border-radius: 2px;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-track {
+		@apply bg-background;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		@apply bg-secondary rounded-full;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		@apply bg-white/50;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.finance-positive {
+		@apply text-success numeric;
+	}
+
+	.finance-negative {
+		@apply text-danger numeric;
+	}
+}
