@@ -3,26 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	:root {
-		--background: 0 0% 4%;
-		--bg-surface: 0 0% 7%;
-		--bg-elevated: 0 0% 9%;
-
-		--primary: 0 0% 100%;
-		--secondary: 0 0% 53%;
-
-		--success: 120 57% 52%;
-		--danger: 0 100% 58%;
-		--warning: 35 91% 55%;
-		--info: 222 75% 48%;
-
-		--border: 0 0% 53%;
-
-		--radius: 0.5rem;
-	}
-}
-
-@layer base {
 	body {
 		@apply bg-background text-primary font-sans;
 	}
@@ -30,7 +10,7 @@
 
 @layer components {
 	.card {
-		@apply bg-card-bg rounded-lg border border-white/[0.08] shadow-card;
+		@apply bg-elevated rounded-lg border border-white/[0.08] shadow-card;
 	}
 
 	.btn {
@@ -42,7 +22,7 @@
 	}
 
 	.btn-secondary {
-		@apply bg-card-bg text-primary hover:bg-hover;
+		@apply bg-elevated text-primary hover:bg-hover;
 	}
 }
 
