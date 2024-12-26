@@ -24,6 +24,10 @@
 	.btn-secondary {
 		@apply bg-elevated text-primary hover:bg-hover;
 	}
+
+	.content-area {
+		@apply bg-surface rounded-2xl p-6 h-full border-white/[0.08] border shadow-content;
+	}
 }
 
 @layer utilities {
