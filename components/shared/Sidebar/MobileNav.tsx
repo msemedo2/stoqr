@@ -11,7 +11,7 @@ const MobileNav = () => {
 	return (
 		<div className="lg:hidden fixed bottom-0 left-0 right-0 bg-background">
 			<nav className="flex-center justify-between items-end px-8 py-4 mx-auto gap-28">
-				<div className="flex gap-12">
+				<div className="flex gap-8">
 					{navigationItems.slice(0, 2).map((item) => {
 						const isActive = pathname === item.href;
 						const Icon = item.icon;
@@ -32,7 +32,7 @@ const MobileNav = () => {
 				<Link href="/" className="absolute left-1/2 -translate-x-1/2">
 					<Icon type="LOGO" className="h-10 w-10" />
 				</Link>
-				<div className="flex gap-12">
+				<div className="flex gap-8">
 					{navigationItems.slice(2).map((item) => {
 						const isActive = pathname === item.href;
 						const Icon = item.icon;
