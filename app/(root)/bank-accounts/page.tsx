@@ -1,7 +1,7 @@
 import React from 'react';
 
-const page = () => {
+const BankAccount = () => {
 	return <div>Bank Accounts</div>;
 };
 
-export default page;
+export default BankAccount;

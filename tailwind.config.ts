@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import tailwindAnimate from 'tailwindcss-animate';
@@ -48,6 +47,17 @@ const config: Config = {
 				xl: '12px',
 				'2xl': '16px',
 				full: '9999px',
+			},
+
+			fontSize: {
+				xs: ['12px', { lineHeight: '16px' }],
+				sm: ['14px', { lineHeight: '20px' }],
+				base: ['16px', { lineHeight: '24px' }],
+				lg: ['18px', { lineHeight: '28px' }],
+				xl: ['20px', { lineHeight: '28px' }],
+				'2xl': ['24px', { lineHeight: '32px' }],
+				'3xl': ['30px', { lineHeight: '36px' }],
+				'4xl': ['36px', { lineHeight: '40px' }],
 			},
 
 			boxShadow: {

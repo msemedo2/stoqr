@@ -2,14 +2,16 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { navigationItems } from './navItems';
-import { Logo } from './Logo';
 import MobileNav from './MobileNav';
+import Logo from './Logo';
+import AuthButtons from '@/components/Auth/AuthButtons';
+import { useSession } from 'next-auth/react';
 
-export function Sidebar() {
+const Sidebar = () => {
 	const pathname = usePathname();
+	const { data: session } = useSession();
 
 	return (
 		<>
@@ -41,13 +43,15 @@ export function Sidebar() {
 					</nav>
 				</div>
 				<div className="mt-auto p-6 pr-0">
-					<button className="flex items-center gap-3 px-3 py-2 w-full rounded-md text-base font-medium text-secondary hover:bg-hover transition-all duration-250">
-						<LogOut className="h-5 w-5" />
-						Logout
-					</button>
+					<p className="text-sm px-3 py-2 text-secondary">
+						{session ? session.user?.name : 'In Demo Mode'}
+					</p>
+					<AuthButtons />
 				</div>
 			</div>
 			<MobileNav />
 		</>
 	);
-}
+};
+
+export default Sidebar;

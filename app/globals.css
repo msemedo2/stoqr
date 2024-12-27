@@ -18,11 +18,11 @@
 	}
 
 	.btn-primary {
-		@apply bg-info text-white hover:opacity-90;
+		@apply flex items-center gap-3 px-3 py-2 w-full rounded-xl text-base font-medium bg-white text-black hover:bg-gray-200 transition-all duration-250;
 	}
 
 	.btn-secondary {
-		@apply bg-elevated text-primary hover:bg-hover;
+		@apply flex items-center gap-3 px-3 py-2 w-full rounded-xl text-base font-medium bg-elevated text-white border border-white/10 hover:border-white/20 transition-all duration-250;
 	}
 
 	.content-area {

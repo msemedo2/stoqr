@@ -1,16 +1,19 @@
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
+import { Toaster } from '@/components/ui/toaster';
+import { SessionProvider } from 'next-auth/react';
+import { auth } from '@/auth';
 
 const inter = Inter({
 	subsets: ['latin'],
-	weight: ['600', '700', '800', '900'],
+	weight: ['400', '500', '600', '700', '800', '900'],
 	variable: '--font-inter',
 });
 
 const jetbrainsMono = JetBrains_Mono({
 	subsets: ['latin'],
-	weight: ['600', '700', '800'],
+	weight: ['400', '500', '600', '700', '800'],
 	variable: '--font-jetbrains-mono',
 });
 
@@ -26,17 +29,22 @@ export const metadata: Metadata = {
 		'Track your personal finances across multiple accounts and investments',
 };
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+	const session = await auth();
+
 	return (
 		<html
 			lang="en"
 			className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
 		>
-			<body className="bg-background min-h-screen">{children}</body>
+			<SessionProvider session={session}>
+				<body className="bg-background min-h-screen">
+					{children}
+					<Toaster />
+				</body>
+			</SessionProvider>
 		</html>
 	);
-}
+};
+
+export default RootLayout;
