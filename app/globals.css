@@ -10,7 +10,7 @@
 
 @layer components {
 	.card {
-		@apply bg-elevated rounded-lg border border-white/[0.08] shadow-card;
+		@apply bg-surface p-6 rounded-lg border border-white/[0.08] shadow-card;
 	}
 
 	.btn {

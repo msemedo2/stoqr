@@ -11,89 +11,147 @@ const config: Config = {
 		'./src/**/*.{ts,tsx}',
 	],
 	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				desktop: '1024px',
-			},
-		},
-		extend: {
-			colors: {
-				background: '#0A0A0A',
-				surface: '#111111',
-				elevated: '#171717',
-
-				primary: '#FFFFFF',
-				secondary: '#888888',
-
-				success: '#52C93E',
-				danger: '#FF2727',
-				warning: '#F5A623',
-				info: '#1D4ED8',
-
-				border: '#888888',
-
-				hover: 'rgba(255, 255, 255, 0.1)',
-				pressed: 'rgba(255, 255, 255, 0.15)',
-				overlay: 'rgba(0, 0, 0, 0.5)',
-			},
-
-			borderRadius: {
-				none: '0px',
-				sm: '4px',
-				md: '6px',
-				lg: '8px',
-				xl: '12px',
-				'2xl': '16px',
-				full: '9999px',
-			},
-
-			fontSize: {
-				xs: ['12px', { lineHeight: '16px' }],
-				sm: ['14px', { lineHeight: '20px' }],
-				base: ['16px', { lineHeight: '24px' }],
-				lg: ['18px', { lineHeight: '28px' }],
-				xl: ['20px', { lineHeight: '28px' }],
-				'2xl': ['24px', { lineHeight: '32px' }],
-				'3xl': ['30px', { lineHeight: '36px' }],
-				'4xl': ['36px', { lineHeight: '40px' }],
-			},
-
-			boxShadow: {
-				card: '0 2px 8px 0 rgba(0, 0, 0, 0.1)',
-				'card-hover': '0 4px 12px 0 rgba(0, 0, 0, 0.2)',
-				float: '0 8px 16px rgba(0, 0, 0, 0.25)',
-				button: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-				'button-hover': '0 2px 4px 0 rgba(0, 0, 0, 0.1)',
-				inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
-				content: '0 0 1px rgba(255,255,255,0.1)',
-			},
-
-			fontFamily: {
-				sans: ['var(--font-inter)', ...fontFamily.sans],
-				mono: ['var(--font-jetbrains-mono)', 'monospace'],
-				'space-grotesk': ['var(--font-space-grotesk)'],
-			},
-
-			transitionDuration: {
-				'250': '250ms',
-			},
-
-			opacity: {
-				'15': '0.15',
-				'35': '0.35',
-				'85': '0.85',
-			},
-
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'fade-top': 'linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1))',
-				'fade-bottom':
-					'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))',
-			},
-		},
-	},
+    	container: {
+    		center: true,
+    		padding: '2rem',
+    		screens: {
+    			desktop: '1024px'
+    		}
+    	},
+    	extend: {
+    		colors: {
+    			background: '#0A0A0A',
+    			surface: '#111111',
+    			elevated: '#171717',
+    			primary: '#FFFFFF',
+    			secondary: '#888888',
+    			success: '#52C93E',
+    			danger: '#FF2727',
+    			warning: '#F5A623',
+    			info: '#1D4ED8',
+    			border: '#888888',
+    			hover: 'rgba(255, 255, 255, 0.1)',
+    			pressed: 'rgba(255, 255, 255, 0.15)',
+    			overlay: 'rgba(0, 0, 0, 0.5)'
+    		},
+    		borderRadius: {
+    			none: '0px',
+    			sm: '4px',
+    			md: '6px',
+    			lg: '8px',
+    			xl: '12px',
+    			'2xl': '16px',
+    			full: '9999px'
+    		},
+    		fontSize: {
+    			xs: [
+    				'12px',
+    				{
+    					lineHeight: '16px'
+    				}
+    			],
+    			sm: [
+    				'14px',
+    				{
+    					lineHeight: '20px'
+    				}
+    			],
+    			base: [
+    				'16px',
+    				{
+    					lineHeight: '24px'
+    				}
+    			],
+    			lg: [
+    				'18px',
+    				{
+    					lineHeight: '28px'
+    				}
+    			],
+    			xl: [
+    				'20px',
+    				{
+    					lineHeight: '28px'
+    				}
+    			],
+    			'2xl': [
+    				'24px',
+    				{
+    					lineHeight: '32px'
+    				}
+    			],
+    			'3xl': [
+    				'30px',
+    				{
+    					lineHeight: '36px'
+    				}
+    			],
+    			'4xl': [
+    				'36px',
+    				{
+    					lineHeight: '40px'
+    				}
+    			]
+    		},
+    		boxShadow: {
+    			card: '0 2px 8px 0 rgba(0, 0, 0, 0.1)',
+    			'card-hover': '0 4px 12px 0 rgba(0, 0, 0, 0.2)',
+    			float: '0 8px 16px rgba(0, 0, 0, 0.25)',
+    			button: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+    			'button-hover': '0 2px 4px 0 rgba(0, 0, 0, 0.1)',
+    			inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+    			content: '0 0 1px rgba(255,255,255,0.1)'
+    		},
+    		fontFamily: {
+    			sans: [
+    				'var(--font-inter)',
+                    ...fontFamily.sans
+                ],
+    			mono: [
+    				'var(--font-jetbrains-mono)',
+    				'monospace'
+    			],
+    			'space-grotesk': [
+    				'var(--font-space-grotesk)'
+    			]
+    		},
+    		transitionDuration: {
+    			'250': '250ms'
+    		},
+    		opacity: {
+    			'15': '0.15',
+    			'35': '0.35',
+    			'85': '0.85'
+    		},
+    		backgroundImage: {
+    			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+    			'fade-top': 'linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1))',
+    			'fade-bottom': 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))'
+    		},
+    		keyframes: {
+    			'accordion-down': {
+    				from: {
+    					height: '0'
+    				},
+    				to: {
+    					height: 'var(--radix-accordion-content-height)'
+    				}
+    			},
+    			'accordion-up': {
+    				from: {
+    					height: 'var(--radix-accordion-content-height)'
+    				},
+    				to: {
+    					height: '0'
+    				}
+    			}
+    		},
+    		animation: {
+    			'accordion-down': 'accordion-down 0.2s ease-out',
+    			'accordion-up': 'accordion-up 0.2s ease-out'
+    		}
+    	}
+    },
 	plugins: [tailwindAnimate],
 };
 
